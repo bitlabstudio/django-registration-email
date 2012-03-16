@@ -51,3 +51,8 @@ Troubleshooting
 If you had another value for ``AUTHENTICATION_BACKENDS`` in your
 ``settings.py`` before it might be that it is saved in your ``django_session``
 table. I found no other way around this than to delete the rows in that table.
+
+TODO
+=====
+
+* Password reset link points to original django template
