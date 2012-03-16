@@ -3,21 +3,17 @@
 {% load i18n %}
 
 {% block main %}
-<div class="container">
-    <div class="sixteen columns alpha">
-        <h2>{% trans "Registration form" %}</h2>
-        <form method="post" action=".">
-            {% csrf_token %}
-            {{ form.non_field_errors }}
-            {% for field in form %}
-            <div class="fieldWrapper">
-                {{ field.errors }}
-                {{ field.label_tag }}
-                {{ field }}
-            </div>
-            {% endfor %}
-            <input type="submit" value="{% trans "Register" %}">
-        </form>
+<h2>{% trans "Registration form" %}</h2>
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }}
+        {{ field }}
     </div>
-</div>
+    {% endfor %}
+    <input type="submit" value="{% trans "Register" %}">
+</form>
 {% endblock %}

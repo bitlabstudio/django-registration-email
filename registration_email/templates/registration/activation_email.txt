@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load url from future %}
 
 
 {% blocktrans with site.name as site_name and site.domain as site_domain %}
@@ -9,7 +10,7 @@ and your address will be removed from our records.
 To activate this account, please click the following link within the next
 {{ expiration_days }} days:
 
-http://{{ site_domain }}/accounts/activate/{{ activation_key }}
+http://{{ site_domain }}{% url "registration_activate" activation_key=activation_key %}
 
 Sincerely,
 {{ site_name }}
