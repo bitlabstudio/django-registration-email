@@ -1,0 +1,3 @@
+recursive-include registration_email *
+include README.md DESCRIPTION
+exclude *.orig *.pyc *.wpr

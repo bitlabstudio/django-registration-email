@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block main %}
+<div class="container">
+    <div class="sixteen columns alpha">
+        <h2>{% trans "Registration complete" %}</h2>
+        <p>{% trans "Thank you for your registration!" %}</p>
+        <p{% trans "You will receive an email with an activation link shortly." %}</p>
+    </div>
+</div>
+{% endblock %}

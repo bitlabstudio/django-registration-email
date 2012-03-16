@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block main %}
+<div class="container">
+    <div class="sixteen columns alpha">
+        <h2>{% trans "Activation complete" %}</h2>
+        <p>{% trans "You may now login with your username and password." %}</p>
+        {% if not user.is_authenticated %}
+            <a href="{% url "auth_login" %}">{% trans "Login now" %}</a>
+        {% else %}
+            <a href="/">{% trans "Home" %}</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
