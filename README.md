@@ -45,6 +45,10 @@ Add some settings to your ``settings.py``::
     )
     LOGIN_REDIRECT_URL = '/'
 
+Run ``syncdb``::
+
+    ./manage.py syncdb
+
 Troubleshooting
 ================
 
