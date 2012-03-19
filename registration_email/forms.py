@@ -61,6 +61,8 @@ class EmailRegistrationForm(forms.Form):
 
         """
         data = self.cleaned_data
+        if not 'email' in data:
+            return data
         if ('password1' in data and 'password2' in data):
 
             if data['password1'] != data['password2']:
