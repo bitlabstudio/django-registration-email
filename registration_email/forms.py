@@ -2,6 +2,7 @@
 import md5
 
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
@@ -11,6 +12,13 @@ from django.utils.translation import ugettext_lazy as _
 # in the HTML. Your mileage may vary. If/when Django ticket #3515
 # lands in trunk, this will no longer be necessary.
 attrs_dict = {'class': 'required'}
+
+
+class EmailAuthenticationForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
+        self.fields['username'] = forms.CharField(
+            label=_("Username"), max_length=256)
 
 
 class EmailRegistrationForm(forms.Form):
@@ -27,7 +35,7 @@ class EmailRegistrationForm(forms.Form):
 
     """
     email = forms.EmailField(
-        widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)),
+        widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=256)),
         label=_("Email")
     )
     password1 = forms.CharField(

@@ -4,7 +4,10 @@ from django.contrib.auth import views as auth_views
 from django.views.generic.simple import direct_to_template
 
 from registration.views import activate, register
-from registration_email.forms import EmailRegistrationForm
+from registration_email.forms import (
+    EmailAuthenticationForm,
+    EmailRegistrationForm,
+)
 
 
 urlpatterns = patterns(
@@ -43,7 +46,9 @@ urlpatterns = patterns(
     # django auth urls
     url(r'^login/$',
         auth_views.login,
-        {'template_name': 'registration/login.html'},
+        {'template_name': 'registration/login.html',
+         'authentication_form': EmailAuthenticationForm,
+        },
         name='auth_login',
     ),
     url(r'^logout/$',

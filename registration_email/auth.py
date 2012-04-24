@@ -4,17 +4,18 @@ Custom authentication backends.
 Inspired by http://djangosnippets.org/snippets/2463/
 
 """
+from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.models import User
 from django.core.validators import email_re
 
 
-class EmailBackend:
+class EmailBackend(ModelBackend):
     """
     Custom authentication backend that allows to login with an email address.
 
     """
 
-    supports_object_permissions = False
+    supports_object_permissions = True
     supports_anonymous_user = False
     supports_inactive_user = False
 
