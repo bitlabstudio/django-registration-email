@@ -18,7 +18,7 @@ class EmailAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
         self.fields['username'] = forms.CharField(
-            label=_("Username"), max_length=256)
+            label=_("Email"), max_length=256)
 
 
 class EmailRegistrationForm(forms.Form):

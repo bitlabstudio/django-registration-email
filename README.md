@@ -23,7 +23,7 @@ Usage
 
 Install this package::
 
-    pip install -e https://github.com/bitmazk/django-registration-email#egg=registration_email
+    pip install -e git://github.com/bitmazk/django-registration-email#egg=registration_email
 
 Add ``registration`` and ``registration_email`` to your ``INSTALLED_APPS``::
 
