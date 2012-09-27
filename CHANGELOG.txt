@@ -1,0 +1,11 @@
+=== ongoing ===
+
+- add your changs here
+
+=== 0.1.0 ===
+
+- Added URLs for the simple backend of django-registration.
+
+=== 0.0.1 ===
+
+- Initial commit
