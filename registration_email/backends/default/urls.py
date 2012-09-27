@@ -1,4 +1,5 @@
 """Custom urls.py for django-registration."""
+from django.conf import settings
 from django.conf.urls.defaults import include, url, patterns
 from django.views.generic.simple import direct_to_template
 
@@ -16,7 +17,10 @@ urlpatterns = patterns('',
     url(r'^activate/(?P<activation_key>\w+)/$',
         activate,
         {'backend': 'registration.backends.default.DefaultBackend',
-         'template_name': 'registration/activate.html'},
+         'template_name': 'registration/activate.html',
+         'success_url': getattr(
+             settings, 'REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL', None),
+        },
         name='registration_activate',
     ),
     url(r'^register/$',
@@ -24,6 +28,8 @@ urlpatterns = patterns('',
         {'backend': 'registration.backends.default.DefaultBackend',
          'template_name': 'registration/registration_form.html',
          'form_class': EmailRegistrationForm,
+         'success_url': getattr(
+             settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
         },
         name='registration_register',
     ),

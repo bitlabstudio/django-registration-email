@@ -49,6 +49,29 @@ Run ``syncdb``::
 
     ./manage.py syncdb
 
+Settings
+========
+
+django-registration-email introduces a new setting:
+
+REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL
+---------------------------------------
+
+Default: ``None``
+
+The URL to redirect to after a successful account activation. If you leave this
+at ``None`` the method ``post_activation_redirect`` of your registration
+backend will be used.
+
+REGISTRATION_EMAIL_REGISTER_SUCCESS_URL
+---------------------------------------
+
+Default: ``None``
+
+The URL to redirect to after a successful registration. If you leave this at
+``None`` the method ``post_registration_redirect`` of your registration backend
+will be used.
+
 Troubleshooting
 ================
 

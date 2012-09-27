@@ -16,8 +16,7 @@ arguments to the various views) or split up the URLs, feel free to set
 up your own URL patterns for these views instead.
 
 """
-
-
+from django.conf import settings
 from django.conf.urls.defaults import include, patterns, url
 from django.views.generic.simple import direct_to_template
 
@@ -33,6 +32,8 @@ urlpatterns = patterns('',
         {'backend': 'registration.backends.simple.SimpleBackend',
          'template_name': 'registration/registration_form.html',
          'form_class': EmailRegistrationForm,
+         'success_url': getattr(
+             settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
         },
         name='registration_register',
     ),
