@@ -1,5 +1,9 @@
 === ongoing ===
 
+- add your changes here
+
+=== 0.2.0 ===
+
 - Added new settings: REGISTRATION_EMAIL_REGISTER_SUCCESS_URL and
   REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL. This allows to override the standard
   redirect without overriding the urls.py.
