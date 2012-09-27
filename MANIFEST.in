@@ -1,3 +1,8 @@
-recursive-include registration_email *.*
-include README.md DESCRIPTION
-exclude *.orig *.pyc *.wpr
+include AUTHORS
+include LICENSE
+include DESCRIPTION
+include CHANGELOG.txt
+include README.md
+recursive-include registration_email *.py *.txt *.html
+prune registration_email/.ropeproject
+exclude *.orig *.pyc
