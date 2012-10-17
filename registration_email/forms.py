@@ -14,6 +14,10 @@ from django.utils.translation import ugettext_lazy as _
 attrs_dict = {'class': 'required'}
 
 
+def generate_username(email):
+    return md5.new(email).hexdigest()[0:30]
+
+
 class EmailAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
@@ -77,6 +81,5 @@ class EmailRegistrationForm(forms.Form):
                 raise forms.ValidationError(
                     _("The two password fields didn't match."))
 
-        self.cleaned_data['username'] = md5.new(
-            data['email']).hexdigest()[0:30]
+        self.cleaned_data['username'] = generate_username(data['email'])
         return self.cleaned_data
