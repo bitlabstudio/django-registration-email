@@ -1,6 +1,8 @@
 === ongoing ===
 
-- made username generation more robust to avoid name clashes 
+=== 0.2.2 ===
+
+- made username generation more robust to avoid name clashes
 
 === 0.2.1 ===
 
