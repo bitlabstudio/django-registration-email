@@ -1,6 +1,6 @@
 === ongoing ===
 
-- add your changes here
+- made username generation more robust to avoid name clashes 
 
 === 0.2.1 ===
 

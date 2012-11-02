@@ -14,8 +14,41 @@ from django.utils.translation import ugettext_lazy as _
 attrs_dict = {'class': 'required'}
 
 
-def generate_username(email):
+def get_md5_hexdigest(email):
+    """
+    Returns an md5 hash for a given email.
+
+    The length is 30 so that it fits into Django's ``User.username`` field.
+
+    """
     return md5.new(email).hexdigest()[0:30]
+
+
+def generate_username(email):
+    """
+    Generates a unique username for the given email.
+
+    The username will be an md5 hash of the given email. If the username exists
+    we just append `a` to the email until we get a unique md5 hash.
+
+    """
+    try:
+        User.objects.get(email=email)
+        raise Exception('Cannot generate new username. A user with this email'
+            'already exists.')
+    except User.DoesNotExist:
+        pass
+
+    username = get_md5_hexdigest(email)
+    found_unique_username = False
+    while not found_unique_username:
+        try:
+            User.objects.get(username=username)
+            email = '{0}a'.format(email)
+            username = get_md5_hexdigest(email)
+        except User.DoesNotExist:
+            found_unique_username = True
+            return username
 
 
 class EmailAuthenticationForm(AuthenticationForm):
