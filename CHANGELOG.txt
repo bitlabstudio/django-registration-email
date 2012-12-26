@@ -1,5 +1,7 @@
 === ongoing ===
 
+=== 0.2.3 ===
+
 - Replaced usage of `direct_to_template` with `TemplateView` because the former
   doesn't exist in Django 1.5 any more.
 
