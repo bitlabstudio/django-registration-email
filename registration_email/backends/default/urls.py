@@ -1,7 +1,7 @@
 """Custom urls.py for django-registration."""
 from django.conf import settings
 from django.conf.urls.defaults import include, url, patterns
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 
 from registration.views import activate, register
 from registration_email.forms import EmailRegistrationForm
@@ -10,8 +10,8 @@ from registration_email.forms import EmailRegistrationForm
 urlpatterns = patterns('',
     # django-registration views
     url(r'^activate/complete/$',
-        direct_to_template,
-        {'template': 'registration/activation_complete.html'},
+        TemplateView.as_view(
+            templare_name='registration/activation_complete.html'),
         name='registration_activation_complete',
     ),
     url(r'^activate/(?P<activation_key>\w+)/$',
@@ -34,13 +34,13 @@ urlpatterns = patterns('',
         name='registration_register',
     ),
     url(r'^register/complete/$',
-        direct_to_template,
-        {'template': 'registration/registration_complete.html'},
+        TemplateView.as_view(
+            template_name='registration/registration_complete.html'),
         name='registration_complete',
     ),
     url(r'^register/closed/$',
-        direct_to_template,
-        {'template': 'registration/registration_closed.html'},
+        TemplateView.as_view(
+            template_name='registration/registration_closed.html'),
         name='registration_disallowed',
     ),
 

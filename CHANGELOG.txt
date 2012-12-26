@@ -1,5 +1,8 @@
 === ongoing ===
 
+- Replaced usage of `direct_to_template` with `TemplateView` because the former
+  doesn't exist in Django 1.5 any more.
+
 === 0.2.2 ===
 
 - made username generation more robust to avoid name clashes
