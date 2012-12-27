@@ -1,5 +1,9 @@
 === ongoing ===
 
+=== 0.2.4 ===
+
+- BUGFIX!! Fixed typo in urls.py. Thanks to `DmitryGit` for reporting this!
+
 === 0.2.3 ===
 
 - Replaced usage of `direct_to_template` with `TemplateView` because the former

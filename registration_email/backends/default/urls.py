@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     # django-registration views
     url(r'^activate/complete/$',
         TemplateView.as_view(
-            templare_name='registration/activation_complete.html'),
+            template_name='registration/activation_complete.html'),
         name='registration_activation_complete',
     ),
     url(r'^activate/(?P<activation_key>\w+)/$',
