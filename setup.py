@@ -21,7 +21,7 @@ setup(
     packages=find_packages(),
     author='Martin Brochhaus',
     author_email='martin.brochhaus@gmail.com',
-    url="http://github.com/bitmazk/djangno-registration-email",
+    url="http://github.com/bitmazk/django-registration-email",
     include_package_data=True,
     test_suite='registration_email.tests.runtests.runtests',
 )
