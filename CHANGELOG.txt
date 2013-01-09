@@ -1,5 +1,7 @@
 === ongoing ===
 
+=== 0.3 ===
+
 - making sure to save emails as lower case all the time
 
 === 0.2.4 ===
