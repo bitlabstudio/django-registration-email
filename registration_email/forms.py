@@ -44,7 +44,7 @@ def generate_username(email):
     while not found_unique_username:
         try:
             User.objects.get(username=username)
-            email = '{0}a'.format(email)
+            email = '{0}a'.format(email.lower())
             username = get_md5_hexdigest(email)
         except User.DoesNotExist:
             found_unique_username = True
@@ -93,7 +93,7 @@ class EmailRegistrationForm(forms.Form):
         try:
             User.objects.get(email__iexact=email)
         except User.DoesNotExist:
-            return email
+            return email.lower()
         raise forms.ValidationError(
             _('A user with that email already exists.'))
 

@@ -1,5 +1,7 @@
 === ongoing ===
 
+- making sure to save emails as lower case all the time
+
 === 0.2.4 ===
 
 - BUGFIX!! Fixed typo in urls.py. Thanks to `DmitryGit` for reporting this!
