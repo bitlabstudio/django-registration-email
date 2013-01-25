@@ -1,9 +1,12 @@
-{% extends "base.html" %}
+{% extends "registration/registration_base.html" %}
 {% load url from future %}
 {% load i18n %}
 
-{% block main %}
+{% block masthead %}
 <h2>{% trans "Registration form" %}</h2>
+{% endblock %}
+
+{% block content %}
 <form method="post" action=".">
     {% csrf_token %}
     {{ form.non_field_errors }}
