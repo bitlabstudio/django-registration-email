@@ -1,5 +1,7 @@
 === ongoing ===
 
+=== 0.4 ===
+
 - Added registration_base.html template.
 
 === 0.3 ===
