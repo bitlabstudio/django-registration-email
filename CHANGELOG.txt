@@ -1,5 +1,9 @@
 === ongoing ===
 
+=== 0.4.1 ===
+
+- Fixed a bad <p> tag
+
 === 0.4 ===
 
 - Added registration_base.html template.
