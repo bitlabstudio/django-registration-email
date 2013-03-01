@@ -93,7 +93,7 @@ msgstr "Accountverzoek"
 #: templates/registration/login.html:6 templates/registration/login.html:28
 #: templates/registration/password_reset_complete.html:11
 msgid "Login"
-msgstr "Inlog"
+msgstr "Log in"
 
 #: templates/registration/login.html:24
 msgid "Forgot your password?"
@@ -129,7 +129,7 @@ msgstr "Wachtwoordwijziging"
 
 #: templates/registration/password_change_form.html:10
 msgid "Please enter your old password, then enter your new password twice."
-msgstr "Vul alstjeblieft je oude wachtwoord in en daarna twee keer het nieuwe wachtwoord."
+msgstr "Vul alsjeblieft je oude wachtwoord in en daarna twee keer het nieuwe wachtwoord."
 
 #: templates/registration/password_change_form.html:21
 msgid "Save"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: templates/registration/password_reset_email.html:4
 msgid "Please go to the following page and choose a new password:"
-msgstr "Ga alstjeblieft naar de volgende pagina en kies een nieuw wachtwoord:"
+msgstr "Ga alsjeblieft naar de volgende pagina en kies een nieuw wachtwoord:"
 
 #: templates/registration/password_reset_email.html:9
 msgid "Thanks for using our site!"
@@ -200,7 +200,7 @@ msgstr "Bedankt voor de moeite!"
 #: templates/registration/password_reset_email.html:11
 #, python-format
 msgid "The %(site_name)s team"
-msgstr "Namens %(site_name)s"
+msgstr "Namens het %(site_name) team"
 
 #: templates/registration/password_reset_form.html:5
 msgid "Password reset"
@@ -220,13 +220,13 @@ msgstr "Registratie gesloten"
 
 #: templates/registration/registration_closed.html:10
 msgid "We are sorry but registration is temporarily closed."
-msgstr "Het spijt ons maar registratie is op dit moment gesloten."
+msgstr "Het spijt ons maar de registratie is op dit moment gesloten."
 
 #: templates/registration/registration_closed.html:11
 msgid ""
 "Please come back shortly and try again. We apologize for the inconvenience."
 msgstr ""
-"Probeer het later opnieuw."
+"Probeer het binnenkort nog eens. Onze excuses voor het ongemak."
 
 #: templates/registration/registration_complete.html:6
 msgid "Registration complete"
