@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-01 13:35+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Alper Cugun <alper@hubbub.eu>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: forms.py:58 forms.py:76 templates/registration/login.html:15
+msgid "Email"
+msgstr "E-mail"
+
+#: forms.py:80
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: forms.py:84
+msgid "Password (repeat)"
+msgstr "Wachtwoord (nog een keer)"
+
+#: forms.py:98
+msgid "A user with that email already exists."
+msgstr "Een gebruiker met dat e-mailadres bestaat al."
+
+#: forms.py:115
+msgid "The two password fields didn't match."
+msgstr "De twee wachtwoord-velden komen niet overeen."
+
+#: templates/registration/activate.html:6
+msgid "Activation failure"
+msgstr "Activatie mislukt"
+
+#: templates/registration/activate.html:10
+msgid "We are sorry but something went wrong!"
+msgstr "Tot onze spijt is er iets misgegaan."
+
+#: templates/registration/activate.html:11
+msgid "The activation link you provided is broken or was already used."
+msgstr "De activatie-link is al gebruikt of heeft een ander mankement."
+
+#: templates/registration/activation_complete.html:6
+msgid "Activation complete"
+msgstr "Activatie voltooid"
+
+#: templates/registration/activation_complete.html:10
+msgid "You may now login with your username and password."
+msgstr "Je kunt nu inloggen met je gebruikersnaam en wachtwoord."
+
+#: templates/registration/activation_complete.html:12
+msgid "Login now"
+msgstr "Log nu in"
+
+#: templates/registration/activation_complete.html:14
+msgid "Home"
+msgstr "Home"
+
+#: templates/registration/activation_email.txt:5
+#, python-format
+msgid ""
+"\n"
+"You have asked to register an account at %(site_name)s.\n"
+"If this wasn't you, please ignore this email.\n"
+"\n"
+"To activate this account, please click the following link within the next\n"
+"%(expiration_days)s days:\n"
+msgstr ""
+"\n"
+"Je hebt je aangemeld voor een account bij site %(site_name)s.\n"
+"Als je dit niet gedaan hebt, kun je deze e-mail negeren."
+"\n"
+"Klik binnen %(expiration_days)s dagen op de volgende link om\n"
+"dit account te activeren:\n"
+
+#: templates/registration/activation_email.txt:15
+msgid "Sincerely,"
+msgstr "Met vriendelijke groet,"
+
+#: templates/registration/activation_email_subject.txt:2
+msgid "Account Request"
+msgstr "Accountverzoek"
+
+#: templates/registration/login.html:6 templates/registration/login.html:28
+#: templates/registration/password_reset_complete.html:11
+msgid "Login"
+msgstr "Log in"
+
+#: templates/registration/login.html:24
+msgid "Forgot your password?"
+msgstr "Wachtwoord vergeten?"
+
+#: templates/registration/login.html:25
+msgid "Register a new account"
+msgstr "Registreer een nieuw account"
+
+#: templates/registration/logout.html:6
+msgid "Logout"
+msgstr "Log uit"
+
+#: templates/registration/logout.html:10
+msgid "You have been logged out."
+msgstr "Je bent uitgelogd."
+
+#: templates/registration/password_change_done.html:6
+msgid "Password change successful"
+msgstr "Wachtwoord succesvol gewijzigd"
+
+#: templates/registration/password_change_done.html:10
+msgid "Your password has been changed."
+msgstr "Je wachtwoord is gewijzigd."
+
+#: templates/registration/password_change_done.html:11
+msgid "Back to dashboard"
+msgstr "Terug naar het dashboard"
+
+#: templates/registration/password_change_form.html:6
+msgid "Password change"
+msgstr "Wachtwoordwijziging"
+
+#: templates/registration/password_change_form.html:10
+msgid "Please enter your old password, then enter your new password twice."
+msgstr "Vul alsjeblieft je oude wachtwoord in en daarna twee keer het nieuwe wachtwoord."
+
+#: templates/registration/password_change_form.html:21
+msgid "Save"
+msgstr "Sla op"
+
+#: templates/registration/password_change_form.html:22
+#: templates/registration/password_reset_form.html:20
+msgid "Reset password"
+msgstr "Reset wachtwoord"
+
+#: templates/registration/password_reset_complete.html:6
+msgid "Password reset complete"
+msgstr "Wachtwoord gereset"
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Please login with your new password."
+msgstr "Log in met je nieuwe wachtwoord."
+
+#: templates/registration/password_reset_confirm.html:7
+msgid "Enter new password"
+msgstr "Voer een nieuw wachtwoord in"
+
+#: templates/registration/password_reset_confirm.html:9
+msgid "Error resetting password"
+msgstr "Fout bij het resetten van het wachtwoord"
+
+#: templates/registration/password_reset_confirm.html:15
+msgid "Please enter your new password twice."
+msgstr "Vul je nieuwe wachtwoord twee keer in."
+
+#: templates/registration/password_reset_confirm.html:26
+msgid "Change my password"
+msgstr "Verander mijn wachtwoord"
+
+#: templates/registration/password_reset_confirm.html:29
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"De link om het wachtwoord te resetten was niet geldig, mogelijk omdat het"
+"al gebruikt is. Vraag een nieuwe reset aan."
+
+#: templates/registration/password_reset_done.html:6
+msgid "Password reset successful"
+msgstr "Wachtwoord succesvol gereset"
+
+#: templates/registration/password_reset_done.html:10
+msgid "We have sent you instructions for setting your password."
+msgstr "We hebben instructies gestuurd om je wachtwoord te resetten."
+
+#: templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this e-mail because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+"Je ontvangt deze e-mail omdat je je wachtwoord bij %(site_name)s opnieuw wilde"
+"instellen."
+
+#: templates/registration/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Ga alsjeblieft naar de volgende pagina en kies een nieuw wachtwoord:"
+
+#: templates/registration/password_reset_email.html:9
+msgid "Thanks for using our site!"
+msgstr "Bedankt voor de moeite!"
+
+#: templates/registration/password_reset_email.html:11
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "Namens het %(site_name) team"
+
+#: templates/registration/password_reset_form.html:5
+msgid "Password reset"
+msgstr "Reset wachtwoord"
+
+#: templates/registration/password_reset_form.html:9
+msgid ""
+"Enter your e-mail address below, and we will send instructions for setting a "
+"new one."
+msgstr ""
+"Vul je e-mail adres in en we sturen je instructies om je wachtwoord"
+"opnieuw in te stellen."
+
+#: templates/registration/registration_closed.html:6
+msgid "Registration closed"
+msgstr "Registratie gesloten"
+
+#: templates/registration/registration_closed.html:10
+msgid "We are sorry but registration is temporarily closed."
+msgstr "Het spijt ons maar de registratie is op dit moment gesloten."
+
+#: templates/registration/registration_closed.html:11
+msgid ""
+"Please come back shortly and try again. We apologize for the inconvenience."
+msgstr ""
+"Probeer het binnenkort nog eens. Onze excuses voor het ongemak."
+
+#: templates/registration/registration_complete.html:6
+msgid "Registration complete"
+msgstr "Registratie voltooid"
+
+#: templates/registration/registration_complete.html:10
+msgid "Thank you for your registration!"
+msgstr "Bedankt voor je aanmelding!"
+
+#: templates/registration/registration_complete.html:11
+msgid "You will receive an email with an activation link shortly."
+msgstr "Je krijgt spoedig een e-mail met daarin de activatielink."
+
+#: templates/registration/registration_form.html:6
+msgid "Registration form"
+msgstr "Registratieformulier"
+
+#: templates/registration/registration_form.html:20
+msgid "Register"
+msgstr "Registreer"
