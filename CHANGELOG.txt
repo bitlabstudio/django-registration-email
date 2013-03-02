@@ -1,5 +1,9 @@
 === ongoing ===
 
+=== 0.5 ===
+
+- Added dutch translation
+
 === 0.4.1 ===
 
 - Fixed a bad <p> tag
