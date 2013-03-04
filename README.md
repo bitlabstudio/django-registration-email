@@ -72,6 +72,83 @@ The URL to redirect to after a successful registration. If you leave this at
 ``None`` the method ``post_registration_redirect`` of your registration backend
 will be used.
 
+How to use a custom form
+========================
+
+Let's say you want to collect the user's first name and last name when he
+registers. In order to achieve that, you need to do the following:
+
+1. Create a custom form
+
+Create a new app `my_registration` in your project and give it a `forms.py`
+where you override our `EmailRegistrationForm` and your desired extra 
+fields:
+
+    from registration_email.forms import EmailRegistrationForm
+
+    class CustomEmailRegistrationForm(EmailRegistrationForm):
+        first_name = forms.CharField()
+        last_name = forms.CharField()
+
+Do NOT override the form's `save()` method.
+
+2. Override the URL
+
+Now you need to tell the registration view that it is supposed to use the
+custom form:
+
+    # your main urls.py
+    ...
+    from registration.views import register
+    from my_registration.forms import CustomEmailRegistrationForm
+
+    urlpatterns = patterns(
+        '' ,
+        ...
+        url(r'^register/$',
+            register,
+            {'backend': 'registration.backends.simple.SimpleBackend',
+            'template_name': 'registration/registration_form.html',
+            'form_class': CustomEmailRegistrationForm,
+            'success_url': getattr(
+                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
+            },
+            name='registration_register', 
+        ),
+
+        url(r'^accounts/', include('registration_email.backends.default.urls')),
+        ...
+    ) 
+
+3. Create a signal handler
+
+In the `urls.py` above I'm using the `SimpleBackend`. When you have a look
+at that [backend](https://github.com/nathanborror/django-registration/blob/master/registration/backends/simple/__init__.py#L30)
+you will see that the backend sends a signal after creating and logging in the
+user. The signal will get all parameters that we need in order to access the
+data that has been validated and sent by the form, so let's build a signal
+handler:
+
+    # in my_registration.models.py
+    from django.dispatch import receiver
+    from registration.signals import user_registered
+
+    @receiver(user_registered)
+    def user_registered_handler(sender, user, request, **kwargs):
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.save()
+
+This method has the drawback that you save the user two times in a row. If
+you have concerns about performance you would have to create your own 
+`my_registration.backends.CustomRegistrationBackend` class. That class would
+inherit `registration.backends.simple.SimpleBackend` and override the 
+`register` method.
+
+But really, we are talking about registration here, I can't imagine how saving 
+the user twice could do any harm.
+
+
 Troubleshooting
 ================
 
