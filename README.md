@@ -78,7 +78,7 @@ How to use a custom form
 Let's say you want to collect the user's first name and last name when he
 registers. In order to achieve that, you need to do the following:
 
-1. Create a custom form
+__1. Create a custom form__
 
 Create a new app `my_registration` in your project and give it a `forms.py`
 where you override our `EmailRegistrationForm` and your desired extra 
@@ -92,7 +92,7 @@ fields:
 
 Do NOT override the form's `save()` method.
 
-2. Override the URL
+__2. Override the URL__
 
 Now you need to tell the registration view that it is supposed to use the
 custom form:
@@ -120,7 +120,7 @@ custom form:
         ...
     ) 
 
-3. Create a signal handler
+__3. Create a signal handler__
 
 In the `urls.py` above I'm using the `SimpleBackend`. When you have a look
 at that [backend](https://github.com/nathanborror/django-registration/blob/master/registration/backends/simple/__init__.py#L30)
