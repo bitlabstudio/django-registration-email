@@ -57,6 +57,10 @@ class EmailAuthenticationForm(AuthenticationForm):
         self.fields['username'] = forms.CharField(
             label=_("Email"), max_length=256)
 
+    def clean_username(self):
+        """Prevent case-sensitive erros in email/username."""
+        return self.cleaned_data['username'].lower()
+
 
 class EmailRegistrationForm(forms.Form):
     """
