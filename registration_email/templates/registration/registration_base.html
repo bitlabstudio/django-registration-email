@@ -2,6 +2,10 @@
 {% load url from future %}
 {% load i18n %}
 
+{% block extracss %}
+{{ form.media.css }}
+{% endblock %}
+
 {% block main %}
     {% block masthead %}{% endblock %}
     {% block content %}{% endblock %}

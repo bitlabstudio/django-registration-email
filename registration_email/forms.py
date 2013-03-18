@@ -86,6 +86,7 @@ class EmailRegistrationForm(forms.Form):
     password2 = forms.CharField(
         widget=forms.PasswordInput(attrs=attrs_dict, render_value=False),
          label=_("Password (repeat)"))
+    your_name = forms.CharField(required=False)
 
     def clean_email(self):
         """
@@ -110,6 +111,9 @@ class EmailRegistrationForm(forms.Form):
 
         """
         data = self.cleaned_data
+        if data.get('your_name'):
+            # Bot protection. The name field is not visible for human users.
+            raise forms.ValidationError(_('Please enter a valid name.'))
         if not 'email' in data:
             return data
         if ('password1' in data and 'password2' in data):
@@ -120,3 +124,9 @@ class EmailRegistrationForm(forms.Form):
 
         self.cleaned_data['username'] = generate_username(data['email'])
         return self.cleaned_data
+
+    class Media:
+        css = {
+            'all': (os.path.join(
+                settings.STATIC_URL, 'registration_email/css/auth.css'), )
+        }
