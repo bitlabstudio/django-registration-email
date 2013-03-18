@@ -1,5 +1,6 @@
 """Custom registration forms that expects an email address as a username."""
 import md5
+import os
 
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
