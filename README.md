@@ -105,7 +105,7 @@ custom form:
     urlpatterns = patterns(
         '' ,
         ...
-        url(r'^register/$',
+        url(r'^accounts/register/$',
             register,
             {'backend': 'registration.backends.simple.SimpleBackend',
             'template_name': 'registration/registration_form.html',
