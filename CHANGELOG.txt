@@ -1,5 +1,7 @@
 === ongoing ===
 
+- using hashlib instead of deprecated md5 module
+
 === 0.5 ===
 
 - Added dutch translation

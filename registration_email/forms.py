@@ -1,5 +1,5 @@
 """Custom registration forms that expects an email address as a username."""
-import md5
+import hashlib
 import os
 
 from django import forms
@@ -23,7 +23,7 @@ def get_md5_hexdigest(email):
     The length is 30 so that it fits into Django's ``User.username`` field.
 
     """
-    return md5.new(email).hexdigest()[0:30]
+    return hashlib.md5(email).hexdigest()[0:30]
 
 
 def generate_username(email):
