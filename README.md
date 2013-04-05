@@ -84,6 +84,7 @@ Create a new app `my_registration` in your project and give it a `forms.py`
 where you override our `EmailRegistrationForm` and your desired extra 
 fields:
 
+    from django import forms
     from registration_email.forms import EmailRegistrationForm
 
     class CustomEmailRegistrationForm(EmailRegistrationForm):
@@ -99,6 +100,7 @@ custom form:
 
     # your main urls.py
     ...
+    from django.conf import settings
     from registration.views import register
     from my_registration.forms import CustomEmailRegistrationForm
 
