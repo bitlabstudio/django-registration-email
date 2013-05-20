@@ -1,5 +1,7 @@
 === ongoing ===
 
+- Changed deprecated import
+
 === 0.5.1 ===
 
 - using hashlib instead of deprecated md5 module

@@ -1,6 +1,6 @@
 """Custom urls.py for django-registration."""
 from django.conf import settings
-from django.conf.urls.defaults import include, url, patterns
+from django.conf.urls import include, url, patterns
 from django.views.generic import TemplateView
 
 from registration.views import activate, register

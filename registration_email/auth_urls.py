@@ -5,7 +5,7 @@ This is done for convenience. It allows us to save all registration and auth
 related templates in the same `/templates/registration/` folder.
 
 """
-from django.conf.urls.defaults import url, patterns
+from django.conf.urls import url, patterns
 from django.contrib.auth import views as auth_views
 from registration_email.forms import EmailAuthenticationForm
 

@@ -17,7 +17,7 @@ up your own URL patterns for these views instead.
 
 """
 from django.conf import settings
-from django.conf.urls.defaults import include, patterns, url
+from django.conf.urls import include, patterns, url
 from django.views.generic import TemplateView
 
 from registration.views import register
