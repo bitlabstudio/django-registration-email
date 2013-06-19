@@ -1,5 +1,7 @@
 === ongoing ===
 
+- stripping whitespace from email string
+
 === 0.5.2 ===
 
 - Changed deprecated import

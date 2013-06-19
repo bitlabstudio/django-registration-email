@@ -96,7 +96,7 @@ class EmailRegistrationForm(forms.Form):
         in use.
 
         """
-        email = self.cleaned_data['email']
+        email = self.cleaned_data['email'].strip()
         try:
             User.objects.get(email__iexact=email)
         except User.DoesNotExist:
