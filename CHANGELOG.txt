@@ -1,6 +1,9 @@
 === ongoing ===
 
-- stripping whitespace from email string
+
+=== 0.5.3 ===
+
+- stripping whitespace from email string in registration form
 
 === 0.5.2 ===
 
