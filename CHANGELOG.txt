@@ -1,6 +1,10 @@
 === ongoing ===
 
 
+=== 0.5.4 ===
+
+- updated Manifest.in to include missing style sheet
+
 === 0.5.3 ===
 
 - stripping whitespace from email string in registration form

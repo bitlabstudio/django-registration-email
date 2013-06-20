@@ -3,6 +3,6 @@ include LICENSE
 include DESCRIPTION
 include CHANGELOG.txt
 include README.md
-recursive-include registration_email *.py *.txt *.html *.mo *.po
+recursive-include registration_email *.py *.txt *.html *.mo *.po *.css
 prune registration_email/.ropeproject
 exclude *.orig *.pyc
