@@ -3,7 +3,10 @@ from django.conf import settings
 from django.conf.urls import include, url, patterns
 from django.views.generic import TemplateView
 
-from registration.views import ActivationView, RegistrationView
+from registration.backends.default.views import (
+    ActivationView,
+    RegistrationView,
+)
 from registration_email.forms import EmailRegistrationForm
 
 
