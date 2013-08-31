@@ -1,5 +1,9 @@
 === ongoing ===
 
+=== 0.6 ===
+
+- Changed URL settings due to misuse of get_success_url function in
+  django-registration app
 - updated to support django-registration's new class based views
 
 === 0.5.4 ===
