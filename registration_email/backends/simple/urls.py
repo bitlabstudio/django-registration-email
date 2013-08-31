@@ -6,43 +6,35 @@ If the default behavior of these views is acceptable to you, simply
 use a line like this in your root URLconf to set up the default URLs
 for registration::
 
-    (r'^accounts/', include('registration.backends.simple.urls')),
+    (r'^accounts/', include('registration_email.backends.simple.urls')),
 
 This will also automatically set up the views in
 ``django.contrib.auth`` at sensible default locations.
 
-If you'd like to customize the behavior (e.g., by passing extra
-arguments to the various views) or split up the URLs, feel free to set
-up your own URL patterns for these views instead.
+If you'd like to customize registration behavior, feel free to set up
+your own URL patterns for these views instead.
 
 """
 from django.conf import settings
 from django.conf.urls import include, patterns, url
-from django.views.generic import TemplateView
+from django.views.generic.base import TemplateView
 
-from registration.views import RegistrationView
-
+from registration.backends.simple.views import RegistrationView
 from registration_email.forms import EmailRegistrationForm
 
 
-urlpatterns = patterns('',
-    # django-registration views
+urlpatterns = patterns(
+    '',
     url(r'^register/$',
-        RegistrationView.as_view(),
-        {'backend': 'registration.backends.simple.SimpleBackend',
-         'template_name': 'registration/registration_form.html',
-         'form_class': EmailRegistrationForm,
-         'success_url': getattr(
-             settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
-        },
-        name='registration_register',
-    ),
+        RegistrationView.as_view(
+            form_class=EmailRegistrationForm,
+            get_success_url=getattr(
+                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
+        ),
+        name='registration_register'),
     url(r'^register/closed/$',
         TemplateView.as_view(
             template_name='registration/registration_closed.html'),
-        name='registration_disallowed',
-    ),
-
-    # django auth urls
+        name='registration_disallowed'),
     (r'', include('registration_email.auth_urls')),
 )

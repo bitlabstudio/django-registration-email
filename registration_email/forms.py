@@ -37,7 +37,7 @@ def generate_username(email):
     try:
         User.objects.get(email=email)
         raise Exception('Cannot generate new username. A user with this email'
-            'already exists.')
+                        'already exists.')
     except User.DoesNotExist:
         pass
 
@@ -83,11 +83,11 @@ class EmailRegistrationForm(forms.Form):
     )
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs=attrs_dict, render_value=False),
-         label=_("Password")
+        label=_("Password")
     )
     password2 = forms.CharField(
         widget=forms.PasswordInput(attrs=attrs_dict, render_value=False),
-         label=_("Password (repeat)"))
+        label=_("Password (repeat)"))
     your_name = forms.CharField(required=False)
 
     def clean_email(self):
