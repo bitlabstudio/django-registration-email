@@ -29,7 +29,8 @@ urlpatterns = patterns(
         RegistrationView.as_view(
             form_class=EmailRegistrationForm,
             get_success_url=getattr(
-                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
+                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL',
+                lambda request, user: '/'),
         ),
         name='registration_register'),
     url(r'^register/closed/$',

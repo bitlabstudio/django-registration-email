@@ -18,14 +18,16 @@ urlpatterns = patterns(
         ActivationView.as_view(
             template_name='registration/activate.html',
             get_success_url=getattr(
-                settings, 'REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL', None),
+                settings, 'REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL',
+                lambda request, user: '/'),
         ),
         name='registration_activate'),
     url(r'^register/$',
         RegistrationView.as_view(
             form_class=EmailRegistrationForm,
             get_success_url=getattr(
-                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
+                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL',
+                lambda request, user: '/'),
         ),
         name='registration_register'),
     url(r'^register/complete/$',

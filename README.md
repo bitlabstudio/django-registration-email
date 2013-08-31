@@ -57,20 +57,20 @@ django-registration-email introduces a new setting:
 REGISTRATION_EMAIL_ACTIVATE_SUCCESS_URL
 ---------------------------------------
 
-Default: ``None``
+Default: ``lambda request, user: '/'``
 
-The URL to redirect to after a successful account activation. If you leave this
-at ``None`` the method ``post_activation_redirect`` of your registration
-backend will be used.
+Function to return the URL to redirect to after a successful account
+activation. If you leave this at ``lambda request, user: '/'`` it will direct
+to your base URL.
 
 REGISTRATION_EMAIL_REGISTER_SUCCESS_URL
 ---------------------------------------
 
-Default: ``None``
+Default: ``lambda request, user: '/'``
 
-The URL to redirect to after a successful registration. If you leave this at
-``None`` the method ``post_registration_redirect`` of your registration backend
-will be used.
+Function to return the URL to redirect to after a successful account
+registration. If you leave this at ``lambda request, user: '/'`` it will direct
+to your base URL.
 
 How to use a custom form
 ========================
@@ -81,7 +81,7 @@ registers. In order to achieve that, you need to do the following:
 __1. Create a custom form__
 
 Create a new app `my_registration` in your project and give it a `forms.py`
-where you override our `EmailRegistrationForm` and your desired extra 
+where you override our `EmailRegistrationForm` and your desired extra
 fields:
 
     from django import forms
@@ -115,12 +115,12 @@ custom form:
             'success_url': getattr(
                 settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
             },
-            name='registration_register', 
+            name='registration_register',
         ),
 
         url(r'^accounts/', include('registration_email.backends.default.urls')),
         ...
-    ) 
+    )
 
 __3. Create a signal handler__
 
@@ -142,12 +142,12 @@ handler:
         user.save()
 
 This method has the drawback that you save the user two times in a row. If
-you have concerns about performance you would have to create your own 
+you have concerns about performance you would have to create your own
 `my_registration.backends.CustomRegistrationBackend` class. That class would
-inherit `registration.backends.simple.SimpleBackend` and override the 
+inherit `registration.backends.simple.SimpleBackend` and override the
 `register` method.
 
-But really, we are talking about registration here, I can't imagine how saving 
+But really, we are talking about registration here, I can't imagine how saving
 the user twice could do any harm.
 
 
