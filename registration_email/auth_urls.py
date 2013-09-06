@@ -9,46 +9,56 @@ from django.conf.urls import url, patterns
 from django.contrib.auth import views as auth_views
 from registration_email.forms import EmailAuthenticationForm
 
+from .views import login_remember_me
 
-urlpatterns = patterns('',
-    url(r'^login/$',
-        auth_views.login,
+
+urlpatterns = patterns(
+    '',
+    url(
+        r'^login/$',
+        login_remember_me,
         {'template_name': 'registration/login.html',
-         'authentication_form': EmailAuthenticationForm,
-        },
+         'authentication_form': EmailAuthenticationForm, },
         name='auth_login',
     ),
-    url(r'^logout/$',
+    url(
+        r'^logout/$',
         auth_views.logout,
         {'template_name': 'registration/logout.html'},
         name='auth_logout',
     ),
-    url(r'^password/change/$',
+    url(
+        r'^password/change/$',
         auth_views.password_change,
         {'template_name': 'registration/password_change_form_custom.html'},
         name='auth_password_change',
     ),
-    url(r'^password/change/done/$',
+    url(
+        r'^password/change/done/$',
         auth_views.password_change_done,
         {'template_name': 'registration/password_change_done_custom.html'},
         name='auth_password_change_done',
     ),
-    url(r'^password/reset/$',
+    url(
+        r'^password/reset/$',
         auth_views.password_reset,
         {'template_name': 'registration/password_reset_form.html'},
         name='auth_password_reset',
     ),
-    url(r'^password/reset/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
+    url(
+        r'^password/reset/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
         auth_views.password_reset_confirm,
         {'template_name': 'registration/password_reset_confirm.html'},
         name='auth_password_reset_confirm',
     ),
-    url(r'^password/reset/complete/$',
+    url(
+        r'^password/reset/complete/$',
         auth_views.password_reset_complete,
         {'template_name': 'registration/password_reset_complete.html'},  # NOQA
         name='auth_password_reset_complete',
     ),
-    url(r'^password/reset/done/$',
+    url(
+        r'^password/reset/done/$',
         auth_views.password_reset_done,
         {'template_name': 'registration/password_reset_done.html'},
         name='auth_password_reset_done',

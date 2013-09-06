@@ -54,6 +54,11 @@ def generate_username(email):
 
 
 class EmailAuthenticationForm(AuthenticationForm):
+    remember_me = forms.BooleanField(
+        required=False,
+        label=_('Remember me'),
+    )
+
     def __init__(self, *args, **kwargs):
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
         self.fields['username'] = forms.CharField(

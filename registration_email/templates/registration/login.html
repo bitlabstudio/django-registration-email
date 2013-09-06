@@ -21,6 +21,11 @@
         {{ form.password }}
     </div>
     <div class="fieldWrapper">
+        {{ form.remember_me.errors }}
+        {{ form.remember_me.label_tag }}
+        {{ form.remember_me }}
+    </div>
+    <div class="fieldWrapper">
         <a href="{% url "auth_password_reset" %}">{% trans "Forgot your password?" %}</a>
         <a href="{% url "registration_register" %}">{% trans "Register a new account" %}</a>?
     </div>
