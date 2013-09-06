@@ -1,5 +1,7 @@
 === ongoing ===
 
+=== 0.7 ===
+
 - Added login_remember_me view function
 - Added remember_me field to EmailLoginForm
 
