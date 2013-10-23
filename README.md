@@ -101,14 +101,14 @@ custom form:
     # your main urls.py
     ...
     from django.conf import settings
-    from registration.views import register
+    from registration.views import RegistrationView
     from my_registration.forms import CustomEmailRegistrationForm
 
     urlpatterns = patterns(
         '' ,
         ...
         url(r'^accounts/register/$',
-            register,
+            RegistrationView.as_view(),
             {'backend': 'registration.backends.simple.SimpleBackend',
             'template_name': 'registration/registration_form.html',
             'form_class': CustomEmailRegistrationForm,
