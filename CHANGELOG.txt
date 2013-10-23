@@ -1,5 +1,9 @@
 === ongoing ===
 
+=== 0.7.1 ===
+
+- Added title block to all templates
+
 === 0.7 ===
 
 - Added login_remember_me view function
