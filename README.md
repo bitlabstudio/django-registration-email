@@ -101,20 +101,18 @@ custom form:
     # your main urls.py
     ...
     from django.conf import settings
-    from registration.views import RegistrationView
+    from registration.backends.simple.views import RegistrationView
     from my_registration.forms import CustomEmailRegistrationForm
 
     urlpatterns = patterns(
         '' ,
         ...
         url(r'^accounts/register/$',
-            RegistrationView.as_view(),
-            {'backend': 'registration.backends.simple.SimpleBackend',
-            'template_name': 'registration/registration_form.html',
-            'form_class': CustomEmailRegistrationForm,
-            'success_url': getattr(
-                settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None),
-            },
+            RegistrationView.as_view(
+                template_name = 'registration/registration_form.html',
+                form_class = CustomEmailRegistrationForm,
+                success_url = getattr( settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None ),
+            ),
             name='registration_register',
         ),
 
