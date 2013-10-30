@@ -107,10 +107,11 @@ custom form:
     urlpatterns = patterns(
         '' ,
         ...
-        url(r'^accounts/register/$',
+        url(
+            r'^accounts/register/$',
             RegistrationView.as_view(
-                template_name = 'registration/registration_form.html',
-                form_class = CustomEmailRegistrationForm,
+                template_name='registration/registration_form.html',
+                form_class=CustomEmailRegistrationForm,
                 get_success_url=getattr(
                     settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL',
                     lambda request, user: '/'),
