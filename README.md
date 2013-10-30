@@ -111,7 +111,9 @@ custom form:
             RegistrationView.as_view(
                 template_name = 'registration/registration_form.html',
                 form_class = CustomEmailRegistrationForm,
-                success_url = getattr( settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL', None ),
+                get_success_url=getattr(
+                    settings, 'REGISTRATION_EMAIL_REGISTER_SUCCESS_URL',
+                    lambda request, user: '/'),
             ),
             name='registration_register',
         ),
