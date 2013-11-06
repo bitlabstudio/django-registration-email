@@ -10,6 +10,7 @@ from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.models import User
 
 
+# TODO: Re-check this regex and find a final solution.
 email_re = re.compile(
     r"(^[-!#$%&'*+/=?^_`{}|~0-9A-Z]+(\.[-!#$%&'*+/=?^_`{}|~0-9A-Z]+)*"  # dot-atom
     # quoted-string, see also http://tools.ietf.org/html/rfc2822#section-3.2.5
