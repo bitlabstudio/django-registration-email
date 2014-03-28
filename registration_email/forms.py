@@ -23,6 +23,8 @@ def get_md5_hexdigest(email):
     The length is 30 so that it fits into Django's ``User.username`` field.
 
     """
+    if isinstance(email, str):  # for py3
+        email = email.encode('utf-8')
     return hashlib.md5(email).hexdigest()[0:30]
 
 
