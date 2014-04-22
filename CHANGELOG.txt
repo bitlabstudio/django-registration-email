@@ -1,5 +1,9 @@
 === ongoing ===
 
+=== 0.7.2 ===
+
+- Prepared for Python 3 and fixed email validator import
+
 === 0.7.1 ===
 
 - Added title block to all templates
