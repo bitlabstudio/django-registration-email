@@ -1,3 +1,13 @@
+Important
+=========
+
+This app has been discontinued due to the give-up of django-registration. Also there are a lot of well developed and more extensive alternatives on the market.
+
+Why don't you check out ``django-allauth``: https://github.com/pennersr/django-allauth
+
+It's already integrated in our project template (incl. templates & settings): https://github.com/bitmazk/django-project-template/
+It's configured the way we used this app.
+
 django-registration-email
 ==========================
 
