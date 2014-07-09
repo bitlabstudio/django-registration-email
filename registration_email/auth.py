@@ -9,6 +9,12 @@ from django.contrib.auth.models import User
 from django.core.validators import validate_email
 
 
+try:
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+except ImportError:
+    from django.contrib.auth.models import User
+
 class EmailBackend(ModelBackend):
     """
     Custom authentication backend that allows to login with an email address.
