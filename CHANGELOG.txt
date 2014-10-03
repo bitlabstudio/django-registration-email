@@ -1,4 +1,6 @@
-=== ongoing ===
+=== 0.8.X (to be released as 0.9) ===
+
+=== 0.8 ===
 
 - Fixed password_change_done URL name
 
