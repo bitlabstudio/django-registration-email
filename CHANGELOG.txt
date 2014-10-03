@@ -1,5 +1,7 @@
 === ongoing ===
 
+- Fixed password_change_done URL name
+
 === 0.7.2 ===
 
 - Prepared for Python 3 and fixed email validator import

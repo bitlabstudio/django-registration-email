@@ -37,7 +37,8 @@ urlpatterns = patterns(
         r'^password/change/done/$',
         auth_views.password_change_done,
         {'template_name': 'registration/password_change_done_custom.html'},
-        name='auth_password_change_done',
+        name='password_change_done',
+        # must be named like this because get's reversed in Django views.py
     ),
     url(
         r'^password/reset/$',

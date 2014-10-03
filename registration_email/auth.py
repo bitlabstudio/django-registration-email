@@ -5,7 +5,6 @@ Inspired by http://djangosnippets.org/snippets/2463/
 
 """
 from django.contrib.auth.backends import ModelBackend
-from django.contrib.auth.models import User
 from django.core.validators import validate_email
 
 
@@ -14,6 +13,7 @@ try:
     User = get_user_model()
 except ImportError:
     from django.contrib.auth.models import User
+
 
 class EmailBackend(ModelBackend):
     """
@@ -38,7 +38,7 @@ class EmailBackend(ModelBackend):
             except User.DoesNotExist:
                 return None
         else:
-            #We have a non-email address username we should try username
+            # We have a non-email address username we should try username
             try:
                 user = User.objects.get(username=username)
             except User.DoesNotExist:
