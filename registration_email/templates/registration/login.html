@@ -28,7 +28,7 @@
         {{ form.remember_me }}
     </div>
     <div class="fieldWrapper">
-        <a href="{% url "auth_password_reset" %}">{% trans "Forgot your password?" %}</a>
+        <a href="{% url "password_reset" %}">{% trans "Forgot your password?" %}</a>
         <a href="{% url "registration_register" %}">{% trans "Register a new account" %}</a>?
     </div>
     <input type="hidden" name="next" value="{{ next }}" />

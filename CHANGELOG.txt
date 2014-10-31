@@ -1,5 +1,10 @@
 === 0.8.X (to be released as 0.9) ===
 
+- Fixed all auth_urls - we have to keep the original URL names because Django
+  uses them internally. You might want to search for `auth_` in your templates
+  and only keep it for `auth_login` and `auth_logout` but remove it from the
+  other URLs
+
 === 0.8 ===
 
 - Fixed password_change_done URL name
