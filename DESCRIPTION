@@ -1,3 +1,1 @@
-Provides a custom authentication backend so that users can signup to the site
-via their email address instead of a username. Also provides a set of standard
-templates and sane URL mappings for the whole registration workflow.
+Provides a custom authentication backend so that users can signup to the site via their email address instead of a username. Also provides a set of standard templates and sane URL mappings for the whole registration workflow.
