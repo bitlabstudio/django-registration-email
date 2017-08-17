@@ -1,4 +1,9 @@
-=== 0.9.X (to be released as 0.10) ===
+=== 0.10.X (to be released as 0.11) ===
+
+=== 0.10 ===
+
+- Updated urls.py to be compatible with recent Django versions (
+  no longer using `patterns`)
 
 === 0.9 ===
 
