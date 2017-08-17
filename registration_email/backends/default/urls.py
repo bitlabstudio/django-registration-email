@@ -1,6 +1,6 @@
 """Custom urls.py for django-registration."""
 from django.conf import settings
-from django.conf.urls import include, url, patterns
+from django.conf.urls import include, url
 from django.views.generic import TemplateView
 
 from registration.backends.default.views import (
@@ -10,8 +10,7 @@ from registration.backends.default.views import (
 from registration_email.forms import EmailRegistrationForm
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     # django-registration views
     url(r'^activate/complete/$',
         TemplateView.as_view(
@@ -44,4 +43,4 @@ urlpatterns = patterns(
 
     # django auth urls
     url(r'', include('registration_email.auth_urls')),
-)
+]

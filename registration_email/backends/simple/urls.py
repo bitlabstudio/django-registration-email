@@ -16,15 +16,14 @@ your own URL patterns for these views instead.
 
 """
 from django.conf import settings
-from django.conf.urls import include, patterns, url
+from django.conf.urls import include, url
 from django.views.generic.base import TemplateView
 
 from registration.backends.simple.views import RegistrationView
 from registration_email.forms import EmailRegistrationForm
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^register/$',
         RegistrationView.as_view(
             form_class=EmailRegistrationForm,
@@ -38,4 +37,4 @@ urlpatterns = patterns(
             template_name='registration/registration_closed.html'),
         name='registration_disallowed'),
     (r'', include('registration_email.auth_urls')),
-)
+]

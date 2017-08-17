@@ -114,8 +114,7 @@ custom form:
     from registration.backends.simple.views import RegistrationView
     from my_registration.forms import CustomEmailRegistrationForm
 
-    urlpatterns = patterns(
-        '' ,
+    urlpatterns = [
         ...
         url(
             r'^accounts/register/$',
@@ -131,7 +130,7 @@ custom form:
 
         url(r'^accounts/', include('registration_email.backends.default.urls')),
         ...
-    )
+    ]
 
 __3. Create a signal handler__
 
